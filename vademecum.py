@@ -9,7 +9,8 @@ class ExcelMongo:
         self.excel = excel
 
     # Lee el excel
-    def excel_to_mongo(self, excel):
+    @staticmethod
+    def excel_to_mongo(excel):
         analgesicos = pd.read_excel(excel).to_json(orient='records')
         # Se pasa a json y luego se inserta
         data = json.loads(analgesicos)
